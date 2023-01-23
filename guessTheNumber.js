@@ -7,7 +7,7 @@ function guessANumber() {
 
     let comuterGuess = Math.floor(Math.random() * 100);
     let guess;
-
+    let counter = 0;
 
     let recursiveAsuncReadLine = function () {
         readline.question('Guess the number (0-100): ', number => {
@@ -29,10 +29,10 @@ function guessANumber() {
                 } else if (guess > comuterGuess) {
                     console.log('Too High!');
                     recursiveAsuncReadLine();
-                } else {
-                    console.log('Invalid input! Try again...');
-                    recursiveAsuncReadLine();
-                }
+                } 
+            } else {
+                console.log('Invalid input! Try again...');
+                recursiveAsuncReadLine();
             }
 
         });
