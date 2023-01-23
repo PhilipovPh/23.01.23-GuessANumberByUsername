@@ -12,6 +12,12 @@ function guessANumber() {
     let recursiveAsuncReadLine = function () {
         readline.question('Guess the number (0-100): ', number => {
             guess = Number(number);
+            counter++;
+
+            if (counter > 6) {
+                console.log('You Lost!');
+                return readline.close();
+            }
 
             if (guess <= 100 && guess >= 0) {
                 if (guess === comuterGuess) {
